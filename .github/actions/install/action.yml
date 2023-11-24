@@ -10,5 +10,7 @@ runs:
       with:
         node-version-file: ".nvmrc"
         cache: "pnpm"
+    - run: pnpm -v
+      shell: bash
     - run: pnpm install --frozen-lockfile
       shell: bash
