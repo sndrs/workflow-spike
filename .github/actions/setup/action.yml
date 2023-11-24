@@ -4,16 +4,13 @@ description: "Sets up Node.js environment with corepack and pnpm"
 runs:
   using: "composite"
   steps:
-    - name: Enable Corepack
-      run: corepack enable
+    - run: corepack enable
       shell: bash
 
-    - name: Install Node.js
-      uses: actions/setup-node@v3
+    - uses: actions/setup-node@v3
       with:
         node-version-file: ".nvmrc"
         cache: "pnpm"
 
-    - name: Install Dependencies with pnpm
-      run: pnpm install
+    - run: pnpm install
       shell: bash
