@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/install
+      - uses: ./.github/actions/setup-environment
       - run: pnpm start

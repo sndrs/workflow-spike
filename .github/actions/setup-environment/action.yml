@@ -1,0 +1,17 @@
+name: "Setup Environment"
+description: "Sets up Node.js environment with corepack and pnpm"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Enable Corepack
+      run: corepack enable
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: ".nvmrc"
+        cache: "pnpm"
+
+    - name: Install Dependencies with pnpm
+      run: pnpm install
