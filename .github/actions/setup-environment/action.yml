@@ -6,6 +6,7 @@ runs:
   steps:
     - name: Enable Corepack
       run: corepack enable
+      shell: bash
 
     - name: Install Node.js
       uses: actions/setup-node@v3
@@ -15,3 +16,4 @@ runs:
 
     - name: Install Dependencies with pnpm
       run: pnpm install
+      shell: bash
