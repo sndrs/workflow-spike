@@ -1,12 +1,12 @@
-on:
-  workflow_call:
+name: install
+description: "Install dependencies"
 
-jobs:
-  install:
-    runs-on: ubuntu-latest
-    steps:
-      - run: corepack enable
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: ".nvmrc"
-          cache: "pnpm"
+runs:
+  using: "composite"
+  steps:
+    - run: corepack enable
+      shell: bash
+    - uses: actions/setup-node@v3
+      with:
+        node-version-file: ".nvmrc"
+        cache: "pnpm"
